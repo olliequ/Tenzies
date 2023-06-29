@@ -82,7 +82,7 @@
 .border_ {
     --angle: 0deg;
     width: 500vmin;
-    height: 60vmin;
+    height: 63vmin;
     border-radius: 10px;
     border: 1vmin solid;
     border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
@@ -139,7 +139,7 @@ body {
 
 main {
     background-color: #F5F5F5;
-    height: 600px;
+    height: 630px;
     max-width: 800px;
     border-radius: 10px;
     padding: 20px;
@@ -211,8 +211,8 @@ main {
 }
 
 .roll-dice {
-    height: 50px;
-    width: 150px;
+    height: 55px;
+    width: 160px;
     border: none;
     border-radius: 6px;
     background-color: #5035FF;
