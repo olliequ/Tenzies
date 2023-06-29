@@ -1,16 +1,19 @@
-# co5fd4991acd2a6ded9358bb4
+# Tenzies! 🎲 🎉
 
-Quick start:
+This repository contains the desing of a web app emulating the popular game 'Tenzies'. The goal is to get all die face displaying the same number/face in as little time & die rolls as possible. The key: you can 'lock in'/freeze a die face by clicking it. I made it as interactive as possible with several features, including high score recording, and celebrationary confetti!
 
-```
-$ yarn # npm install
-$ yarn build # npm run build
-````
+Play the game here: https://olliequ.github.io/Tenzies/
 
-## Development
+## Technical Details
 
-Run Webpack in watch-mode to continually compile the JavaScript as you work:
+I wrote this game in ReactJS for the frontend, and Vite.js for the backend. Build instructions:
 
 ```
-$ yarn watch # npm run watch
+$ npm install
+$ npm run start
 ```
+
+Below are some screencaps from the game:
+
+![](./assets/start.png)
+![](./assets/end.png)

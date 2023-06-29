@@ -1,5 +1,5 @@
 import React from "react"
-import githIcon from '../gith-icon.png'
+import githIcon from '../assets/gith-icon.png'
 
 function Footer() {
     return (
