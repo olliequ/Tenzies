@@ -2,11 +2,12 @@ import React from "react"
 
 export default function Die(props) {
     const styles = {
-        backgroundColor: props.isHeld ? "#59E391" : "white"
+        backgroundColor: props.isHeld ? "#59E391" : "white",
     }
     return (
         <div 
-            className="die-face" 
+            // className="die-face"
+            className={props.isHeld ? "die-face rise-shake" : "die-face"}
             style={styles}
             onClick={props.holdDice}
         >

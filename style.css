@@ -2,24 +2,179 @@
     box-sizing: border-box;
 }
 
+.hmm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+}
+
+.watch {
+    font-size: 15pt;
+}
+
+.stats {
+    display: flex;
+    /* justify-content: space between; */
+    align-items: center;
+    /* gap: 20px; */
+    font-size: 8.5pt;
+    width: 600px;
+}
+
+.times {
+    /* font-size: 0.7rem; */
+    margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
+
+.score {
+    /* font-size: 0.7rem; */
+    margin-right: auto;
+}
+
+.scores {
+    /* font-size: 0.7rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
+
+/* .gradient-border {
+    --borderWidth: 5px;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+
+.border_ {
+    --angle: 0deg;
+    width: 500vmin;
+    height: 60vmin;
+    border-radius: 10px;
+    border: 1vmin solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 10s rotate linear infinite, vertical-shaking 0.8s;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -5;
+  }
+
+.bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+}
+  
+
 body {
     margin: 0;
-    background-color: #0B2434;
+    background-color: #0f293a;
+    /* background-image: url();
+    background-position-x: right;
+    background-position-y: -50%;
+    background-repeat: no-repeat; */
+
     padding: 20px;
     font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
     background-color: #F5F5F5;
-    height: 400px;
+    height: 600px;
     max-width: 800px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+.rise-shake {
+    animation: jump-shaking 0.33s;
+}
+
+@keyframes jump-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-9px) }
+    35% { transform: translateY(-9px) rotate(17deg) }
+    55% { transform: translateY(-9px) rotate(-17deg) }
+    65% { transform: translateY(-9px) rotate(17deg) }
+    75% { transform: translateY(-9px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+}
+
+.vertical-shake {
+    animation: vertical-shaking 0.3s;
+}
+
+@keyframes vertical-shaking {
+    0% { transform: translateY(0) }
+    25% { transform: translateY(5px) }
+    50% { transform: translateY(-5px) }
+    75% { transform: translateY(5px) }
+    100% { transform: translateY(0) }
+  }
 
 .title {
     font-size: 40px;
@@ -74,3 +229,22 @@ main {
 .roll-dice:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 25;
+    width: 100%;
+    /* background-color: red; */
+    color: rgb(199, 138, 197);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+a:hover {
+    color: hotpink;
+  }
