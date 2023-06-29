@@ -10,10 +10,10 @@ export default function App() {
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
     const [rolls, setRolls] = React.useState(0)
-    const [time, setTime] = useState(0);
-    // const [running, setRunning] = useState(false);
+    const [time, setTime] = React.useState(0)
+    const [running, setRunning] = React.useState(false)
     const [highScore, setHighScore] = React.useState(1000)
-    const [bestTime, setBestTime] = React.useState("")
+    const [bestTime, setBestTime] = React.useState(100000)
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -22,20 +22,25 @@ export default function App() {
         if (allHeld && allSameValue) {
             setTenzies(true)
             rolls < highScore ? setHighScore(rolls) : setHighScore(highScore)
+            time < bestTime ? setBestTime(time) : setBestTime(bestTime)
+            console.log(bestTime)
+            console.log(time)
+            setRunning(false)
+            setTime(0)
         }
     }, [dice]);
 
-    // React.useEffect(() => {
-    //     let interval;
-    //     if (running) {
-    //       interval = setInterval(() => {
-    //         setTime((prevTime) => prevTime + 10);
-    //       }, 10);
-    //     } else if (!running) {
-    //       clearInterval(interval);
-    //     }
-    //     return () => clearInterval(interval);
-    //   }, [running]);
+    React.useEffect(() => {
+        let interval;
+        if (running) {
+          interval = setInterval(() => {
+            setTime((prevTime) => prevTime + 10);
+          }, 10);
+        } else if (!running) {
+          clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+      }, [running]);
 
     function generateNewDie() {
         return {
@@ -52,11 +57,6 @@ export default function App() {
         }
         return newDice
     }
-    
-/**
- * Challenge: Allow the user to play a new game when the
- * button is clicked and they've already won
- */
     
     function rollDice() {
         if (!tenzies) {
@@ -108,7 +108,7 @@ export default function App() {
                     className="roll-dice" 
                     onClick={rollDice}
                 >
-                    {tenzies ? "🎲 New Game 🎲" : "🎲 Roll 🎲"}
+                    {tenzies ? "New Game" : "🎲 Roll 🎲"}
                 </button>
                 <br></br>
                 <div className="stats">
@@ -118,10 +118,9 @@ export default function App() {
                     </div>
                     <div className="times">
                         <div className="hmm">
-                            <h1 className="time">Current time:</h1>
-                            <Stopwatch time={time}/>
+                            <h1 className="time">Current time: <Stopwatch time={time}/></h1>
                         </div>
-                            <h1 className="time">Best time: {bestTime === "" ? '---' : bestTime}</h1>
+                            <h1 className="time">Best time: {bestTime === 100000 ? '---' : <Stopwatch time={bestTime}/>}</h1>
                     </div>
                 </div>
             </main>

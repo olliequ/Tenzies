@@ -7,9 +7,9 @@ export default function Stopwatch (props) {
     const milliseconds = ("0" + ((props.time / 10) % 100)).slice(-2);
 
     return (
-        <div>
-            <p>⏲ Time elapsed:</p>
-            {/* <span>{minutes}:{seconds}:{milliseconds}</span> */}
-        </div>
+        // <div>
+            /* <p>⏲ Time elapsed:</p> */
+            <span>{minutes}:{seconds}:{milliseconds}</span>
+        /* </div> */
     );
   };
